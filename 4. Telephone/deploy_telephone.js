@@ -5,12 +5,12 @@ async function main() {
   const Telephone = await hre.ethers.getContractFactory("Telephone");
   const telephone = await Telephone.deploy();
   await telephone.deployed();
-  console.log(`Fallback deployed to ${telephone.address}`);
+  console.log(`Telephone deployed to ${telephone.address}`);
 
   const ProxyHack = await hre.ethers.getContractFactory("ProxyHack");
   const proxyHack = await ProxyHack.deploy();
   await proxyHack.deployed();
-  console.log(`Fallback deployed to ${proxyHack.address}`);
+  console.log(`ProxyHack deployed to ${proxyHack.address}`);
 
   const [owner, hacker] = await ethers.getSigners();
 
