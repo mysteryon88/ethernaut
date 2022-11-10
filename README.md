@@ -1,5 +1,5 @@
 # Ethernaut
-problem solving [Ethernaut](ethernaut.openzeppelin.com)
+problem solving [Ethernaut](https://ethernaut.openzeppelin.com)
 
 #### Deploy and run
 ```
