@@ -1,0 +1,3 @@
+## GoodSamaritan
+
+This instance represents a Good Samaritan that is wealthy and ready to donate some coins to anyone requesting it. Would you be able to drain all the balance from his Wallet?
